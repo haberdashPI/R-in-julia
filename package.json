@@ -1,0 +1,41 @@
+{
+    "name": "R-in-julia",
+    "displayName": "Embedded R in Julia",
+    "description": "Syntax highlighting for R code embedded in Julia via RCall.jl",
+    "version": "0.1.0",
+    "publisher": "haberdashPI",
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "keywords": [
+        "Julia", "R"
+    ],
+    "contributes": {
+        "grammars": [
+            {
+                "scopeName": "julia.r.codeblock",
+                "path": "./syntaxes/codeblock.json",
+                "injectTo": [
+                    "source.julia"
+                ],
+                "embeddedLanguages": {
+                    "variable.matlab.block.string": "r"
+                },
+                "tokenTypes": {
+                    "variable.matlab.block.string": "other",
+                    "variable.matlab.string": "other"
+                }
+            }
+          ]
+    },
+    "extensionDependencies": [
+        "julialang.language-julia"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/haberdashPI/vscode-r-in-julia"
+    }
+}

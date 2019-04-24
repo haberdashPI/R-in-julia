@@ -1,0 +1,29 @@
+{
+	"scopeName": "julia.r.codeblock",
+	"injectionSelector": "L:string.quoted.other",
+	"patterns": [
+		{ "include": "#r_code_block" },
+		{ "include": "#r_code_string" }
+	],
+	"repository": {
+        "r_code_string": {
+			"begin": "(?<=R\")([^\"]|$)",
+			"end": "(.|^)(?=\")",
+            "name": "variable.r.string",
+            "patterns": [
+                { "include": "source.julia#string_dollar_sign_interpolate" },
+                { "include": "source.r" }
+            ]
+		},
+		"r_code_block": {
+			"begin": "(?<=R\"\"\")(.|$)",
+			"end": "(.|^)(?=\"\"\")",
+			"name": "variable.r.block.string",
+			"patterns": [
+                { "include": "source.julia#string_dollar_sign_interpolate" },
+				{ "include": "source.r" }
+			]
+		}
+	}
+}
+
